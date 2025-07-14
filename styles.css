@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --bg-color: #191f36;
+    --snd-bg-color: #262B40;
+    --text-color: #ffffff;
+    --main-color: #59B2F4;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Added sticky class styles for header */
+.header.sticky {
+    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+}
+
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+    cursor: default;
+}
+
+.navbar a {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+/* HOME */
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    padding-top: 5rem;
+}
+
+.home-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    text-align: left;
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.home-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.home-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: floatImage 4s ease-in-out infinite;
+    box-shadow: 0 0 2rem var(--main-color);
+}
+
+@keyframes floatImage {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-2.4rem); }
+    100% { transform: translateY(0); }
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.social-media {
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    transition: 0.5s ease;
+}
+
+.social-media a:hover {
+    background: var(--main-color);
+    color: var(--snd-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.5s ease;
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+/* ABOUT */
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    background: var(--snd-bg-color);
+    padding: 8rem 9% 2rem;
+}
+
+.about-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    max-width: 450px;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.about-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-content .heading {
+    text-align: left;
+    font-size: 4.5rem;
+    margin-bottom: 3rem;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+    margin-bottom: 1.5rem;
+    color: var(--main-color);
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+/* SERVICES */
+.services .heading {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 5rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.services-box {
+    background: var(--snd-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 1rem;
+    text-align: center;
+    border: 0.2rem solid var(--bg-color);
+    transition: 0.5s ease;
+    min-width: 300px;
+    max-width: 350px;
+}
+
+.services-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.services-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+.services-box h3 {
+    font-size: 2.6rem;
+    margin-top: 1rem;
+}
+
+.services-box p {
+    font-size: 1.6rem;
+    margin: 1rem 0 2rem;
+}
+
+/* CONTACT */
+.contact h2 {
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 4.5rem; /* Ukuran font diperbesar */
+}
+
+/* Flexbox container for centering the location text and map */
+.location-map-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;   /* Center items horizontally */
+    margin-top: 3rem; /* Adjust as needed for spacing */
+    margin-bottom: 3rem; /* Space before the form */
+}
+
+.contact .center-text { /* Styling for "Lokasi saya" heading */
+    text-align: center;
+    margin-bottom: 1.5rem; /* Space between text and map */
+    font-size: 2.6rem; 
+    color: var(--main-color); 
+}
+
+.map-responsive {
+    overflow: hidden;
+    position: relative;
+    width: 100%; /* Take full width of its parent (.location-map-container) */
+    max-width: 600px; /* Limit max width of the map container */
+    
+    height: 0; /* Set to 0 karena padding-bottom akan menentukan tinggi secara dinamis */
+    padding-bottom: 100%; /* Ini membuat .map-responsive *kontainer* menjadi persegi */
+
+    border: 1px solid var(--main-color); /* Border matching hologram theme */
+    box-shadow: 0 0 10px var(--main-color); /* Glow effect */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    position: absolute;
+    border: 0; 
+    border-radius: 6px; 
+    
+    width: 100%; /* Memenuhi lebar parent */
+    height: 100%; /* Memenuhi tinggi parent */
+    aspect-ratio: 1 / 1; /* Ini adalah kunci untuk membuat iframe itu sendiri persegi */
+    object-fit: cover; /* Memastikan konten mengisi area persegi (mungkin memotong sedikit tepi) */
+}
+
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto; /* Center the form */
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--snd-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;
+    margin-top: 0.7rem;
+    min-height: 150px;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .home-content h1 {
+        font-size: 4.5rem;
+    }
+
+    .home-content p {
+        font-size: 1.5rem;
+    }
+
+    .about-content h2.heading {
+        font-size: 3.2rem;
+    }
+
+    .about-content h3 {
+        font-size: 2.2rem;
+    }
+
+    .about-content p {
+        font-size: 1.5rem;
+    }
+
+    .services h2.heading {
+        font-size: 3.8rem;
+    }
+
+    /* Contact form responsive adjustments */
+    .contact form .input-box input {
+        width: 100%;
+        margin: 0.7rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .home-img {
+        margin-bottom: 3rem;
+    }
+
+    .social-media {
+        justify-content: center;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .heading {
+        font-size: 3.5rem;
+    }
+
+    /* Responsive adjustments for map on smaller screens */
+  .map-responsive {
+    .map-responsive {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 250px;      
+    height: 0;
+    padding-bottom: 100%;  
+    border: 1px solid var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+    border-radius: 8px;
+    margin: 0 auto;        
+}
+
+
+.map-responsive iframe {
+    .map-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 0;
+    border-radius: 6px;
+}
+
+}
+
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home-content h
